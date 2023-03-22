@@ -1,6 +1,6 @@
 {
   "name": "skylordapi.js",
-  "version": "1.0.1",
+  "version": "1.0.0-stable",
   "description": "unofficial skylord npm package",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -19,5 +19,6 @@
   "devDependencies": {
     "typescript": "^5.0.2"
   },
-  "keywords": ["SkyLord"]
+  "keywords": ["SkyLord"],
+  "readme": "./README.md"
 }
