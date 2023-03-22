@@ -8,7 +8,7 @@ Il sera mise à jour à chaque changement sur l'api.
 ## Récupérer la monnaie d'un joueur. 
 Vous pouvez obtenir seulement la monnaie du joueur.
 ```js
-const SkylordAPI = require("skylordapi");
+const SkylordAPI = require("skylordapi.js");
 
 // Dans une fonction non asynchrone
 SkylordAPI.getMoney("pseudo")
@@ -19,7 +19,7 @@ console.log(await SkylordAPI.getMoney("pseudo")) // --> 100
 ```
 Mais aussi obtenir la devise.
 ```js
-const SkylordAPI = require("skylordapi");
+const SkylordAPI = require("skylordapi.js");
 
 // Dans une fonction non asynchrone
 SkylordAPI.getMoney("pseudo", true)
@@ -32,7 +32,7 @@ console.log(await SkylordAPI.getMoney("pseudo", true)) // --> 100$
 ## Récupérer le porte monnaie crypto (Wallet) d'un joueur.
 
 ```js
-const SkylordAPI = require("skylordapi");
+const SkylordAPI = require("skylordapi.js");
 
 // Dans une fonction non asynchrone
 SkylordAPI.getWallet("pseudo")
@@ -68,7 +68,7 @@ Liste des jobs: ``"Mineur", "Pecheur", "Architecte", "Chasseur", "Bucheron", "Av
 
 Pour 1 job : 
 ```js
-const SkylordAPI = require("skylordapi");
+const SkylordAPI = require("skylordapi.js");
 
 // Dans une fonction non asynchrone
 SkylordAPI.getJob("pseudo", job)
@@ -89,7 +89,7 @@ console.log((await SkylordAPI.getJob("pseudo", job)).maxexp)
 Pour tout les jobs :
 
 ```js
-const SkylordAPI = require("skylordapi");
+const SkylordAPI = require("skylordapi.js");
 
 // Dans une fonction non asynchrone
 SkylordAPI.getJobs("pseudo")
