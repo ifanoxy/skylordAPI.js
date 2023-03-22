@@ -3,7 +3,7 @@
 Ce module n'est pas un module officiel de skylord !
 Il sera mise à jour à chaque changement sur l'api.
 
-**Pour télécharger le module** ``npm i skylordapi``
+**Pour télécharger le module** ``npm i skylordapi.js``
 
 ## Récupérer la monnaie d'un joueur. 
 Vous pouvez obtenir seulement la monnaie du joueur.
