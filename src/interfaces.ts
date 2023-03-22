@@ -5,7 +5,7 @@ export interface APIUserMoney {
 
 export interface APIUserWallet {
     wallet: [{
-        BTCUSTD: string
+        BTCUSDT: string
     },{
         ETHUSDT: string
     },{
@@ -26,7 +26,7 @@ export interface APIUserWallet {
 }
 
 export interface Wallet {
-    BTCUSTD: string,
+    BTCUSDT: string,
     ETHUSDT: string,
     LTCUSDT: string,
     BNBUSDT: string,

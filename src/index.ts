@@ -29,7 +29,7 @@ export function getWallet(pseudo: string): Promise<Wallet> {
         axios.get(baseURL + `joueur/wallet?pseudo=${pseudo}`)
             .then(res => res.data).then((res: APIUserWallet) => {
                 resolve({
-                    BTCUSTD: res.wallet[0].BTCUSTD,
+                    BTCUSDT: res.wallet[0].BTCUSDT,
                     ETHUSDT: res.wallet[1].ETHUSDT,
                     LTCUSDT: res.wallet[2].LTCUSDT,
                     BNBUSDT: res.wallet[3].BNBUSDT,
