@@ -50,21 +50,11 @@ export function getWallet(pseudo: string): Promise<Wallet> {
  * @param pseudo pseudo minecraft du joueur
  * @param job job que vous souhaitez récupérer.
  */
-export function getJob(pseudo: string, job?: JobTypes): Promise<JobStats> {
-    if (!pseudo) throw new Error("Veuillez spécifier un pseudo !")
+export function getJob(pseudo: string, job: JobTypes): Promise<JobStats> {
+    if (!pseudo) throw new Error("Veuillez spécifier un pseudo !");
     return new Promise((resolve, reject) => {
-        axios.get(baseURL + `joueur/jobs?pseudo=${pseudo}&jobs=${job}`)
-            .then(res => res.data)
-            .then((res: APIJobs) => {
-                if (res.Resultat == "404") reject("Le métier est introuvable !");
-                if (res.Resultat == "998") reject("Le joueur n'est pas en ligne ou n'existe pas");
-                resolve({
-                    level: Object.values(res.jobs[0])[0][0].jlevel,
-                    maxlevel: Object.values(res.jobs[0])[0][1].jmaxlvl,
-                    exp: Object.values(res.jobs[0])[0][2].jexp,
-                    maxexp: Object.values(res.jobs[0])[0][3].jmaxexp,
-                })
-            })
+        getJobs(pseudo)
+            .then(res => resolve(res[job]))
             .catch(reject)
     })
 }

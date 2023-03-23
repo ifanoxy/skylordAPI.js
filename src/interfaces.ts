@@ -37,7 +37,7 @@ export interface Wallet {
     DOTUSDT: string,
 }
 
-export type JobTypes = "Mineur" | "Pecheur" | "Architecte" | "Chasseur" | "Bucheron" | "Aventurier";
+export type JobTypes = "mineur" | "pecheur" | "architecte" | "chasseur" | "bucheron" | "aventurier";
 
 export interface APIJobs {
     Resultat: "01" | "998" | "404";

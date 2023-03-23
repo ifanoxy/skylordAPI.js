@@ -18,7 +18,7 @@ export declare function getWallet(pseudo: string): Promise<Wallet>;
  * @param pseudo pseudo minecraft du joueur
  * @param job job que vous souhaitez récupérer.
  */
-export declare function getJob(pseudo: string, job?: JobTypes): Promise<JobStats>;
+export declare function getJob(pseudo: string, job: JobTypes): Promise<JobStats>;
 /**
  * Vous permet de récupérer les informations sur tout les métiers d'un joueur
  *
