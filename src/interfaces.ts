@@ -37,7 +37,7 @@ export interface Wallet {
     DOTUSDT: string,
 }
 
-export type JobTypes = "mineur" | "pecheur" | "architecte" | "chasseur" | "bucheron" | "aventurier";
+export type JobTypes = "mineur" | "pecheur" | "architecte" | "chasseur" | "bucheron" | "aventurier" | "fermier";
 
 export interface APIJobs {
     Resultat: "01" | "998" | "404";
@@ -47,6 +47,7 @@ export interface APIJobs {
         {Architecte: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
         {Chasseur: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
         {Bucheron: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Fermier: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
         {Aventurier: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
     ]
 }
@@ -58,6 +59,7 @@ export interface JobsStats {
     chasseur: JobStats,
     bucheron: JobStats,
     aventurier: JobStats,
+    fermier: JobStats,
 }
 
 export interface JobStats {

@@ -1,6 +1,6 @@
 {
   "name": "skylordapi.js",
-  "version": "1.0.1-stable",
+  "version": "1.0.0-s",
   "description": "unofficial skylord npm package",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
