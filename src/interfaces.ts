@@ -41,12 +41,14 @@ export type JobTypes = "Mineur" | "Pecheur" | "Architecte" | "Chasseur" | "Buche
 
 export interface APIJobs {
     Resultat: "01" | "998" | "404";
-    jobs: {
-        jlevel: string,
-        jmaxlvl: string,
-        jexp: string,
-        jmaxexp: string
-    }[]
+    jobs: [
+        {Mineur: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Pecheur: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Architecte: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Chasseur: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Bucheron: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+        {Aventurier: [{jlevel: string}, {jmaxlvl: string}, {jexp: string}, {jmaxexp: string}]},
+    ]
 }
 
 export interface JobsStats {

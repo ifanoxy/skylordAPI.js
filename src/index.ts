@@ -59,10 +59,10 @@ export function getJob(pseudo: string, job?: JobTypes): Promise<JobStats> {
                 if (res.Resultat == "404") reject("Le métier est introuvable !");
                 if (res.Resultat == "998") reject("Le joueur n'est pas en ligne ou n'existe pas");
                 resolve({
-                    level: res.jobs[0].jlevel,
-                    maxlevel: res.jobs[0].jmaxlvl,
-                    exp: res.jobs[0].jexp,
-                    maxexp: res.jobs[0].jmaxexp,
+                    level: Object.values(res.jobs[0])[0][0].jlevel,
+                    maxlevel: Object.values(res.jobs[0])[0][1].jmaxlvl,
+                    exp: Object.values(res.jobs[0])[0][2].jexp,
+                    maxexp: Object.values(res.jobs[0])[0][3].jmaxexp,
                 })
             })
             .catch(reject)
@@ -83,14 +83,15 @@ export function getJobs(pseudo: string): Promise<JobsStats> {
             .then((res: APIJobs) => {
                 if (res.Resultat == "404") reject("Le métier est introuvable !");
                 if (res.Resultat == "998") reject("Le joueur n'est pas en ligne ou n'existe pas");
-                const jobs = ["mineur", "pecheur", "architecte", "chasseur", "bucheron", "aventurier"];
+                const jobs = ["architecte", "aventurier", "bucheron", "chasseur", "mineur", "pecheur"];
                 let data: any = {};
+                res.jobs.sort((a, b) => Object.keys(a)[0] < Object.keys(b)[0] ? -1 : 1)
                 for (let i of [...Array(5).keys()]) {
                     data[jobs[i]] = {
-                        level: res.jobs[i].jlevel,
-                        maxlevel: res.jobs[i].jmaxlvl,
-                        exp: res.jobs[i].jexp,
-                        maxexp: res.jobs[i].jmaxexp,
+                        level: Object.values(res.jobs[i])[0][0].jlevel,
+                        maxlevel: Object.values(res.jobs[i])[0][1].jmaxlvl,
+                        exp: Object.values(res.jobs[i])[0][2].jexp,
+                        maxexp: Object.values(res.jobs[i])[0][3].jmaxexp,
                     }
                 }
                 resolve(data)
