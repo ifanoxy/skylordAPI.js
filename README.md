@@ -64,7 +64,7 @@ console.log((await SkylordAPI.getWallet("pseudo")).DOTUSDT)
 
 Vous pouvez choisir de récupérer seulement 1 job ou tout les jobs
 
-Liste des jobs: ``"Mineur", "Pecheur", "Architecte", "Chasseur", "Bucheron", "Aventurier"``
+Liste des jobs: ``"mineur", "pecheur", "architecte", "chasseur", "bucheron", "aventurier", "fermier"``
 
 Pour 1 job : 
 ```js
@@ -95,6 +95,7 @@ const SkylordAPI = require("skylordapi.js");
 SkylordAPI.getJobs("pseudo")
     .then(jobsData => {
         jobsData.mineur         // Même propriétés que pour 1 job
+        jobsData.fermier         // Même propriétés que pour 1 job
         jobsData.pecheur        // Même propriétés que pour 1 job
         jobsData.architecte     // Même propriétés que pour 1 job
         jobsData.chasseur       // Même propriétés que pour 1 job
